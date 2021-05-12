@@ -1,7 +1,7 @@
 # small-test
 
 
-![Screenshot](https://github.com/yingjundeng/yingjundeng.github.io/blob/master/src/assets/12171907.png)
+![Screenshot](https://github.com/yingjundeng/vue-draw/tree/master/src/assets/12171907.png)
 ## Project setup
 ```
 yarn install
