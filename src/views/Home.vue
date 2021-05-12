@@ -12,13 +12,13 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import  dyjCanvas  from './dyj-canvas'
+// import  dyjCanvas  from './dyj-canvas'
 import  TmCanvas  from './canvas'
 export default {
   name: 'home',
   components: {
     HelloWorld,
-    dyjCanvas,
+    // dyjCanvas,
     TmCanvas
   }
 }
