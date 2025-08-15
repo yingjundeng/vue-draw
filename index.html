@@ -1,60 +1,225 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Vue3 + Vite5 + TypeScript5 + Element-Plus 的后台管理模板，配套接口文档和后端源码，vue-element-admin 的 Vue3 版本"
-    />
-    <meta
-      name="keywords"
-      content="vue,element-plus,typescript,vue-element-admin,vue3-element-admin"
-    />
-    <title>vue3-element-admin</title>
-  </head>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
 
-  <body>
-    <div id="app">
-      <div class="loader"></div>
-    </div>
-  </body>
+*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+				background-color: black
+			}
+			#yue{
+				position: relative;
+				top:30%;
+				left: 80%;
+				width: 200px;
+				height: 200px;
+				cursor: pointer;
+			}
+			#yue::before,#yue::after{
+				content:"小金宝";
+				color: red;
+				text-align: center;
+				line-height: 100px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100px;
+				height: 100px;
+				transform: translate(-50%,-50%);
+				border-radius:50% ;
+				background-color: rgba(255,255,255,0.8);
+				animation: yue 2s infinite;
+			}
+			#yue::after{
+				content:"";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				border-radius:50% ;
+				animation: yue 2s infinite;
+				width: 150px;
+				height: 150px;
+				background-color: rgba(255,255,255,0.4)
+			}
+			
+			@keyframes yue{
+				0%{transform:translate(-50%,-50%) scale(1);
+				   box-shadow: 0px 0px 25px rgba(255,255,255,0.6);
+				 }
+				50%{transform:translate(-50%,-50%) scale(1.2);
+				 box-shadow: 0px 0px 75px rgba(255,255,255,0.6);
+				}
+				100%{transform:translate(-50%,-50%) scale(1);
+				 box-shadow: 0px 0px 25px rgba(255,255,255,0.6);
+				}
+			}
+.heart{  
+    position: relative;  
+    top: 30%;
+    left: 50%;
+    width: 200px;  
+    height: 200px;    
+     transform: ;
+    background-color: #FF0000;  
+    animation: run 1s infinite;
+}  
+.heart:before,  
+.heart:after{  
+    position: absolute;  
+    width: 200px;  
+    height: 200px;  
+    content: '';    
+    border-radius: 50%;  
+    background-color: #FF0000; 
+    /*transform: translate(-45deg); */
+   animation: xin 1s infinite;
+}  
+.heart:before{  
+    bottom: 0px;  
+    left: -90px;  
+}  
+.heart:after{  
+    top: -90px;  
+    right: 0px;  
+} 
+@keyframes xin{
+	          0%{
+				   box-shadow: 0px 0px 25px red;
+				 }
+				50%{
+				 box-shadow: 0px 0px 75px red;
+				}
+				100%{
+				 box-shadow: 0px 0px 25px red;
+				}
+}
 
-  <style>
-    html,
-    body,
-    #app {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .loader {
-      --d: 22px;
-
-      width: 4px;
-      height: 4px;
-      color: #25b09b;
-      border-radius: 50%;
-      box-shadow:
-        calc(1 * var(--d)) calc(0 * var(--d)) 0 0,
-        calc(0.707 * var(--d)) calc(0.707 * var(--d)) 0 1px,
-        calc(0 * var(--d)) calc(1 * var(--d)) 0 2px,
-        calc(-0.707 * var(--d)) calc(0.707 * var(--d)) 0 3px,
-        calc(-1 * var(--d)) calc(0 * var(--d)) 0 4px,
-        calc(-0.707 * var(--d)) calc(-0.707 * var(--d)) 0 5px,
-        calc(0 * var(--d)) calc(-1 * var(--d)) 0 6px;
-      animation: l27 1s infinite steps(8);
-    }
-
-    @keyframes l27 {
-      100% {
-        transform: rotate(1turn);
-      }
-    }
-  </style>
+@keyframes run{
+				0%{transform:rotate(45deg)scale(1);
+				   box-shadow: 0px 0px 25px red;
+				 }
+				50%{transform:rotate(45deg) scale(1.2);
+				 box-shadow: 0px 0px 75px red;
+				}
+				100%{transform:rotate(45deg)scale(1);
+				 box-shadow: 0px 0px 25px red;
+				}
+			}
+			
+			#div1{
+				position: absolute;
+				top: 20%;
+				left: 13%;
+				min-height: 20px;
+				width: 200px;
+				line-height: 30px;
+				font-family: "楷体";
+				font-size:22px ;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--<input type="button" name="" id="btn" value="展开" />
+		<input type="button" name="" id="btn1" value="收缩" />-->
+		<div id="div1"></div>
+		<div class="heart"></div>
+		<div id="yue"></div>
+	</body>
+	
+	
+		<script type="text/javascript">
+			//1.先写出界面
+			//2.加样式
+			//3.添加两个按钮的点击事件
+			//4.将字符串中的字符,一个一个显示出来
+			//5.将字符串一个一个收缩功能实现
+			//6.解决收缩与展开同时运行的bug
+			//
+			
+			var inputs = document.getElementsByTagName("input");
+			var div1 = document.getElementById("div1");
+			var str="天边划过的流星，他对着白云说着我爱你，就算是化成灰来到你的身旁，那也是多幸福 多快乐的事。地上流淌的河水，他带着我的思念流向你，那漂着的花瓣代表我的决心，就算太慢也要靠近你的心。爱了多少次啊 梦了多少回，情到浓时无语画相思，流了多少泪啊 哭了多少回啊，爱到深处不知心已碎。"
+		    var count=0,
+			 timer=null,
+			 re=true;
+		yue.onclick=function(){
+			
+			//clearInterval(timer);
+			if(re==true){	
+				clearInterval(timer);
+			timer=	setInterval(function(){
+			
+				var str2=str.substring(0,++count);
+				
+				div1.innerHTML=str2;
+				if(str2==str){
+					clearInterval(timer)
+				}
+				console.log(count)
+			},100)
+			
+	     }else {
+		   clearInterval(timer)
+	 	    timer=	setInterval(function(){
+			
+				var str2=str.substring(0,--count);
+				
+				div1.innerHTML=str2;
+				
+				if(str2==""){
+					clearInterval(timer)
+				}
+				
+			},50)
+		 }	
+		       re=!re;
+		}
+			
+//			inputs[1].onclick = function() //收缩
+//			{
+//				//不能既展开又收缩,需要将前面的定时器停掉
+//				//收缩时,需要停掉展开的定时器
+//				clearInterval(timer);
+//				
+//				timer = setInterval(function(){
+//					var sub1 = str.substring(0,--count);  //每隔50毫秒,计数器减1
+//					console.log(sub1);
+//					
+//					//取到了要用的字符,显示
+//					div1.innerHTML = sub1;
+//					
+//					//如果取得字符串为空了,那么停掉定时器
+//					if (sub1 == "")
+//					{
+//						clearInterval(timer);
+//					}
+//				},50);
+//			}
+			var tim=null;
+			function Wrandom(){
+				return parseInt(Math.random()*255);
+			}
+			
+			onload=function(){
+				clearInterval(tim);  //清除上一个定时器
+			tim=setInterval (function(){
+				document.body.style.background="rgb("+Wrandom()+","+Wrandom()+","+Wrandom()+")";
+			},1000);
+			
+			}
+		    btn1.onclick=function(){
+		    	clearInterval(tim);
+		    }
+		
+	</script>
 </html>
